@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div className='app'>
-        <h2>Click the button below to upload a file:</h2>
+        <h2>Click below to upload a file:</h2>
         <input type="file" onChange={(event) => {setFileUpload(event.target.files[0])}}/>
           <button onClick={uploadFile}>Upload</button>
 
