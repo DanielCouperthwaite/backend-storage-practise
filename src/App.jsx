@@ -11,7 +11,7 @@ function App() {
     if(uploadFile == null) return;
     const fileRef = ref(storage, `files/${fileUpload.name + v4()}`)
     uploadBytes(fileRef, fileUpload).then(() => {
-      alert("File Uploaded")
+      alert("File uploaded successfully!")
     })
   }
 
