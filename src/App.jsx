@@ -9,18 +9,18 @@ function App() {
   const [fileUpload, setFileUpload] = useState(null)
   const uploadFile = () => {
     if(uploadFile == null) return;
-    const imageRef = ref(storage, `files/${fileUpload.name + v4()}`)
-    uploadBytes(imageRef, imageUpload).then(() => {
-      alert("Image Uploaded")
+    const fileRef = ref(storage, `files/${fileUpload.name + v4()}`)
+    uploadBytes(fileRef, fileUpload).then(() => {
+      alert("File Uploaded")
     })
   }
 
   return (
     <>
       <div className='app'>
-        <h2>Click below to upload an image:</h2>
+        <h2>Click below to upload a file:</h2>
         <input type="file" onChange={(event) => {setFileUpload(event.target.files[0])}}/>
-          <button onClick={fileUpload}>Upload</button>
+          <button onClick={uploadFile}>Upload</button>
 
       </div>
     </>
