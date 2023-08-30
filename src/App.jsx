@@ -22,7 +22,11 @@ function App() {
     listAll(fileListRef).then((res) => {
       res.items.forEach((item) => {
         getDownloadURL(item).then((url) => {
+          console.log(fileList)
+          console.log("url: ", url)
+          if(!fileList.includes(url)){
           setFileList((prev) => [...prev, url])
+          }
         })
       })
     })
@@ -35,6 +39,7 @@ function App() {
         <input type="file" onChange={(event) => {setFileUpload(event.target.files[0])}}/>
           <button onClick={uploadFile}>Upload</button>
 
+          <h3>Files stored:</h3>
           {fileList.map((url) => {
             return <li key="url">{url}</li>
           })}
