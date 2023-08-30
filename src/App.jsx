@@ -22,8 +22,6 @@ function App() {
     listAll(fileListRef).then((res) => {
       res.items.forEach((item) => {
         getDownloadURL(item).then((url) => {
-          console.log(fileList)
-          console.log("url: ", url)
           if(!fileList.includes(url)){
           setFileList((prev) => [...prev, url])
           }
