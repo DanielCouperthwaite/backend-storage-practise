@@ -7,7 +7,7 @@ import { v4 } from 'uuid'
 function App() {
  
   const [fileUpload, setFileUpload] = useState(null)
-  const [fileList, setFileList] =useState([])
+  const [fileList, setFileList] = useState([])
   const fileListRef = ref(storage, "files/")
 
   const uploadFile = () => {
@@ -35,9 +35,9 @@ function App() {
         <input type="file" onChange={(event) => {setFileUpload(event.target.files[0])}}/>
           <button onClick={uploadFile}>Upload</button>
 
-          {/* {fileList.map((url) => {
-            return <img src={url}></img>
-          })} */}
+          {fileList.map((url) => {
+            return <li key="url">{url}</li>
+          })}
       </div>
     </>
   )
